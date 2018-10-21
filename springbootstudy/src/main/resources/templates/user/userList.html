@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>hello</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+<link rel="stylesheet" th:href="@{/static2/css/my.css}"/>
+
+<!-- 
+<script th:inline="javascript">
+    var t = /*[[${userList}]]*/ 1111;
+    //alert(t[0].name);
+</script>
+
+<p>
+    The name of the first person is [[${myNum}]].
+  </p>
+   -->
+<!--/* 
+<div th:with="firstPer=${myNum}">
+  <p>
+    The name of the first person is <span th:text="${firstPer}">Julius Caesar</span>.
+  </p>
+</div>
+firstPer=<span th:text="${firstPer}">Julius Caesar</span>
+ */-->
+ <!-- 
+</br>
+<div th:replace="~{footer :: copy(aa=${myNum},bb='b22')}"></div>
+</br>
+<div th:switch="${myNum}">
+  <p th:case="'12'">User is an administrator</p>
+  <p th:case="1234">User is a manager</p>
+  <p th:case="*">User is some other thing</p>
+</div>
+</br>
+<input th:ccc="${myNum}" type="checkbox" name="option1" checked="${myBool}" />
+</br>
+<div th:text="${{myNum}}">12345678</div>
+</br>
+<div th:text="${myBool}? _ : 'bb'">12345678</div>
+</br>
+<div th:text="${myBool}? 'aa'+${myNum} : 'bb'">12345678</div>
+</br>
+<div th:text="|skajdflj,${session.s1}--sdf|">12345678</div>
+</br>
+
+<p th:text="#{user.msg1(${myNum})}">Welcome to our grocery store!</p>
+<br/>
+<p th:text="${userList}">Welcome to our grocery store!</p>
+<br/>
+<p th:utext="${session.s1}">Welcome to our grocery store!</p>
+<br/>
+<p th:text="${application.sctx1}">Welcome to our grocery store!</p>
+<br/>
+<p th:text="${myNum * 2}">Welcome to our grocery store!</p>
+<br/>
+<p th:text="${#ctx.getSession().getAttribute('s1')}">Welcome to our grocery store!</p>
+<br/>
+<p th:text="${#calendars.format(myCal,'yyyy-MM-dd')}">Welcome to our grocery store!</p>
+<br/>
+<div th:object="${myCal}">
+  <p>Name: <span th:text="${#object.weekYear}">Sebastian</span>.</p>
+  <p>Surname: <span th:text="${myCal.time}">Pepper</span>.</p>
+  <p>Nationality: <span th:text="*{weekYear}">Saturn</span>.</p>
+</div>
+</br>
+<div th:unless="${session.something} == null">12345678</div>
+</br>
+ -->
+
+
+
+<table border="1" class="table-striped">
+	<tr>
+		<td>uuid</td>
+		<td>name</td>
+		<td>age</td>
+		<td><a href="/aa/bb" th:attr="href=@{/user/toAdd}">转到新增1111</a></td>
+	</tr>
+	<tr th:each="m,iterStat:${userList}">
+		<td th:text="${m.uuid}">1</td>
+		<td th:text="${m.name}">1</td>
+		<td th:text="${m.age}">1</td>
+		<td>
+			<span th:text="${iterStat}"></span>
+			<a th:href="@{/user/toUpdate(uuid=${m.uuid})}">修改</a>
+			<a th:href="@{/user/delete(uuid=${m.uuid})}">删除</a>
+		</td>
+	</tr>
+	<!--/*-->	
+	<tr>
+		<td>2</td>
+		<td>2</td>
+		<td>2</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>3</td>
+		<td>3</td>
+		<td>3</td>
+		<td></td>
+	</tr>
+	<!--*/-->	
+</table>
+</body>
+</html>

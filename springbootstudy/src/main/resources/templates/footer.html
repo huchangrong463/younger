@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+  <body>
+  
+    <div th:fragment="copy" th:assert="${aa}==12345">
+    	<span th:text="'aa='+${aa}+' , bb='+${bb}"></span>
+      &copy; 2018 The Good Thymes Virtual Grocery
+    </div>
+  
+  </body>
+  
+</html>

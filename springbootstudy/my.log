@@ -1,0 +1,6 @@
+2017-10-08 11:03:13.500 ERROR 18368 --- [main] o.s.b.l.LoggingApplicationListener       : Cannot set level: DEBUG  for 'root.com.cc'
+2017-10-08 11:03:41.062  WARN 18368 --- [http-nio-9080-exec-1] c.c.s.hello.FirstController              : now is warn
+2017-10-08 11:03:41.078 ERROR 18368 --- [http-nio-9080-exec-1] c.c.s.hello.FirstController              : now is error
+2017-10-08 11:04:56.765 ERROR 10396 --- [main] o.s.b.l.LoggingApplicationListener       : Cannot set level: DEBUG  for 'com.cc'
+2017-10-08 11:05:23.500  WARN 10396 --- [http-nio-9080-exec-1] c.c.s.hello.FirstController              : now is warn
+2017-10-08 11:05:23.500 ERROR 10396 --- [http-nio-9080-exec-1] c.c.s.hello.FirstController              : now is error

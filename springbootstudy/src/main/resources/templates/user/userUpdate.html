@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>hello</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<p th:text="${param.uuid}">Welcome to our grocery store!</p>
+<br/>
+
+
+<form th:action="@{/user/update}" method="post">
+<table>
+	<tr>
+		<td>uuid</td>
+		<td><input type="text" name="uuid" id="uuid" th:field="${um.uuid}" /></td>
+	</tr>
+	<tr>
+		<td>name</td>
+		<td><input type="text" name="name" id="name" th:field="${um.name}"/></td>
+	</tr>
+	<tr>
+		<td>age</td>
+		<td><input type="text" name="age" id="age" th:field="${um.age}"/></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td><input type="submit" value="保存"/></td>
+	</tr>
+</table>
+</form>
+</body>
+</html>
